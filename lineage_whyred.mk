@@ -19,7 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Inherit some common Lineage stuff
+# Inherit some common ProjectMatrixx stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Updatable Apex
@@ -28,6 +28,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Inherit from whyred device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
+
+# Inherit some common device props
+TARGET_INCLUDE_WIFI_EXT := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+SYSTEM_OPTIMIZE_JAVA := true
+SYSTEMUI_OPTIMIZE_JAVA := true
+MATRIXX_BUILD_TYPE := Official
+MATRIXX_MAINTAINER := ARIJIT-SAHA
+MATRIXX_CHIPSET := sdm660
+MATRIXX_BATTERY := 4000mah
+MATRIXX_DISPLAY := 1080x2160
+WITH_GMS := true
+EXTRA_GAPPS := false
 
 # Bootanimation
 TARGET_BOOT_ANIMATION_RES := 720
